@@ -5,5 +5,5 @@
 
  May incorporate the django-htmx package at some point
 
- DEMOS TODO:
- - ?
+ DEMOS:
+ - CRUD - experimenting with CRUD behaviours, without full page reload

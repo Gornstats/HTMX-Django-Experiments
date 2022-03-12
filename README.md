@@ -7,3 +7,7 @@
 
  DEMOS:
  - CRUD - experimenting with CRUD behaviours, without full page reload
+
+
+OTHER IDEAS:
+ - the live markdown editor & viewer from django-htmx site 

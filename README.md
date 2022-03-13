@@ -12,3 +12,4 @@
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site 
+ - need landing page to direct to various apps

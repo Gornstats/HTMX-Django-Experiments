@@ -3,12 +3,22 @@
 {% block title %}Click to Edit{% endblock title %}
 
 {% block content %}
-<p>TEST</p>
+    {% for person in people %}
+        <ul>
+            <li>ID: {{ person.id }}</li>
+            <li>First: {{ person.first_name }}</li>
+            <li>Last: {{ person.last_name }}</li>
+            <li>Email: {{ person.email_address }}</li>
+        </ul>
+        <br/>
+    {% endfor %}
 
+<!--
 TODO:
-Add data to model (and create superuser)
+DONE: Add data to model (and create superuser)
 Update template to display instances of model
 Create partial template with form pre-populated for requested instance
 Create views for GET(ting the editable form), and PUT(updating the form)
+-->
 
 {% endblock content %}

@@ -7,6 +7,7 @@
 
  DEMOS:
  - CRUD - experimenting with CRUD behaviours, without full page reload
+    - starting with click to edit and add/delete
 
 
 OTHER IDEAS:

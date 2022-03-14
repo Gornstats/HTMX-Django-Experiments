@@ -4,20 +4,22 @@
 
 {% block content %}
     {% for person in people %}
-        <ul>
-            <li>ID: {{ person.id }}</li>
-            <li>First: {{ person.first_name }}</li>
-            <li>Last: {{ person.last_name }}</li>
-            <li>Email: {{ person.email_address }}</li>
-        </ul>
+        <div hx-target="this" hx-swap="outerHTML">
+            <div><label>First Name</label>: {{ person.first_name }}</div>
+            <div><label>Last Name</label>: {{ person.last_name }}</div>
+            <div><label>Email</label>: {{ person.email_address }}</div>
+            <button hx-get="edit/{{ person.id }}/">
+            Click To Edit
+            </button>
+        </div>
         <br/>
     {% endfor %}
 
 <!--
 TODO:
 DONE: Add data to model (and create superuser)
-Update template to display instances of model
-Create partial template with form pre-populated for requested instance
+DONE: Update template to display instances of model
+DONE: Create partial template with form pre-populated for requested instance
 Create views for GET(ting the editable form), and PUT(updating the form)
 -->
 

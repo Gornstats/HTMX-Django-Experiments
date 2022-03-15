@@ -25,9 +25,9 @@ def edit_person(request, pk):
 def update_person(request, pk):
     person = Person.objects.get(pk=pk)
 
-    person.first_name = request.POST.get('firstName','firstError')
-    person.last_name = request.POST.get('lastName','secondError')
-    person.email_address = request.POST.get('email','thirdError')
+    person.first_name = request.POST.get('firstName','firstnameError')
+    person.last_name = request.POST.get('lastName','secondnameError')
+    person.email_address = request.POST.get('email','emailError')
     person.save()
     
     return render(request, 'crud/partials/person.html', {'person': person})

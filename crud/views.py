@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
+from django.http.response import HttpResponse
 
 from crud.models import Person
 
@@ -51,3 +52,10 @@ def create(request):
 def cancel_create(request):
     
     return render(request, 'crud/partials/create_button.html')
+
+@require_http_methods(['DELETE'])
+def delete_person(request, pk):
+    person = Person.objects.get(pk=pk)
+    person.delete()
+    
+    return HttpResponse()

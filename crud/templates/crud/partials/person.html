@@ -3,7 +3,10 @@
     <div><label>Last Name</label>: {{ person.last_name }}</div>
     <div><label>Email</label>: {{ person.email_address }}</div>
     <button hx-get="edit/{{ person.id }}/">
-    Click To Edit
+        Click To Edit
+    </button>
+    <button hx-delete="delete/{{ person.id }}/" hx-confirm="Are you sure you want to delete?">
+        Delete
     </button>
     <p>----</p>
 </div>

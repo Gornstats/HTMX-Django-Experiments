@@ -13,7 +13,12 @@ def live_edit(request):
 def get_person(request, pk):
     person = Person.objects.get(pk=pk)
     
-    return render(request, 'crud/partials/person.html', {'person': person})
+    return render(request, 'crud/partials/person.html', {'person': person, 'adding_new_client': False})
+
+@require_http_methods(['GET'])
+def create_person(request):
+    
+    return render(request, 'crud/partials/create_person.html')
 
 @require_http_methods(['GET'])
 def edit_person(request, pk):
@@ -30,4 +35,19 @@ def update_person(request, pk):
     person.email_address = request.POST.get('email','emailError')
     person.save()
     
-    return render(request, 'crud/partials/person.html', {'person': person})
+    return render(request, 'crud/partials/person.html', {'person': person, 'adding_new_client': False})
+
+@require_http_methods(['POST'])
+def create(request):
+    person = Person.objects.create(
+        first_name=request.POST.get('firstName','firstnameError'),
+        last_name=request.POST.get('lastName','secondnameError'),
+        email_address=request.POST.get('email','emailError')
+    )
+    
+    return render(request, 'crud/partials/person.html', {'person': person, 'adding_new_client': True})
+
+@require_http_methods(['GET'])
+def cancel_create(request):
+    
+    return render(request, 'crud/partials/create_button.html')

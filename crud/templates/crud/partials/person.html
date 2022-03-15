@@ -5,4 +5,8 @@
     <button hx-get="edit/{{ person.id }}/">
     Click To Edit
     </button>
+    <p>----</p>
 </div>
+{% if adding_new_client %}
+    {% include 'crud/partials/create_button.html' %}
+{% endif %}

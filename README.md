@@ -7,8 +7,7 @@
 
  DEMOS:
  - CRUD - experimenting with CRUD behaviours, without full page reload
-    - starting with click to edit and add/delete
-
+    - Click to edit, live Add & (to come) Delete 
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site 

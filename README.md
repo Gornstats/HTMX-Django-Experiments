@@ -14,4 +14,4 @@
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?
- - need landing page to direct to various apps
+ - need to create a landing page to direct users to the various apps/demos

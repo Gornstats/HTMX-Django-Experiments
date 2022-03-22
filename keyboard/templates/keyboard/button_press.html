@@ -8,7 +8,7 @@
         width: 100px;
         height: 100px;
         border: 1px solid black;
-        margin: 10px;
+        margin: 20px;
         background-color: grey;
     }
 </style>
@@ -17,10 +17,21 @@
 {% block content %}
 
 <!-- Div to change colour when button is pressed or on appropriate key press -->
-<div id='colourBox'></div>
+    <div id='colourBox'></div>
 
+    <button hx-trigger="click, keyup[key=='r'] from:body"
+        hx-post="change/red/"
+        hx-target="#colourBox"
+        hx-swap="outerHTML">Red (Key: r)</button>
 
-<button hx-trigger="click, keyup[key=='r'] from:body"
-        hx-post="/doit">Red (Key: r)</button>
+    <button hx-trigger="click, keyup[key=='b'] from:body"
+        hx-post="change/blue/"
+        hx-target="#colourBox"
+        hx-swap="outerHTML">Blue (Key: b)</button>
+
+    <button hx-trigger="click, keyup[key=='y'] from:body"
+        hx-post="change/yellow/"
+        hx-target="#colourBox"
+        hx-swap="outerHTML">Yellow (Key: y)</button>
 
 {% endblock content %}

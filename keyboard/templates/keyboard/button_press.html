@@ -1,0 +1,26 @@
+{% extends "keyboard/base.html" %}
+
+{% block title %}Keyboard button press{% endblock title %}
+
+{% block styles %}
+<style>
+    #colourBox {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 10px;
+        background-color: grey;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Div to change colour when button is pressed or on appropriate key press -->
+<div id='colourBox'></div>
+
+
+<button hx-trigger="click, keyup[key=='r'] from:body"
+        hx-post="/doit">Red (Key: r)</button>
+
+{% endblock content %}

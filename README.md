@@ -10,7 +10,7 @@
     - Click to edit, in-line Add & Delete 
  - Keyboard (ROOT/keyboard): Using keyboard shortcuts to trigger HTMX events
     - Change colour of a div with buttons/key presses
-    - TODO: More advanced example of keyboard shortcuts?
+    - TODO: More advanced example of keyboard shortcuts? Maybe livesearch on each 'keyup changed' trigger event
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?

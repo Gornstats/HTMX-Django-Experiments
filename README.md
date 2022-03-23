@@ -14,4 +14,5 @@
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?
+  - a certificate generator: enter text that live updates in a styled html preview of the certificate, plus a button to generate HTML portion as PDF using weasyprint 
  - need to create a landing page to direct users to the various apps/demos

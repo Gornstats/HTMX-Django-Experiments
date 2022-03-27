@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #local
     'crud',
     'keyboard',
+    'certificate',
 ]
 
 MIDDLEWARE = [

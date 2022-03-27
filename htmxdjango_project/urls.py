@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('crud/', include('crud.urls')),
     path('keyboard/', include('keyboard.urls')),
+    path('certificate/', include('certificate.urls')),
     path('admin/', admin.site.urls),
 ]

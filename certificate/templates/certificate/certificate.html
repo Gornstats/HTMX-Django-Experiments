@@ -9,6 +9,7 @@
         border: 1px solid black;
         margin: 10px;
         padding: 15px;
+        background: #f5f7e9;
     }
     #inputs > input {
         display: block;
@@ -21,7 +22,16 @@
         float: right;
         margin: 10px;
         padding: 20px 30px;
-        border: 3px solid black;
+        border: 20px solid red;
+    }
+
+    #certificate > div {
+        display: block;
+    }
+
+    #certSignature {
+        font-family: Brush Script MT, cursive;
+        font-size: 28px;
     }
 </style>
 {% endblock %}
@@ -30,26 +40,27 @@
 <div id="inputs">
     <input type="text" name="name" id="name" placeholder="Name"
         hx-post="name/" 
-        hx-trigger="keyup changed delay:200ms" 
+        hx-trigger="keyup changed delay:600ms" 
         hx-target="#certName">
     <input type="text" name="qual" id="qual" placeholder="Qualification"
         hx-post="qual/" 
         hx-trigger="keyup changed delay:200ms" 
         hx-target="#certQual">
-    <input type="number" name="awardDate" id="awardDate" max="2050" min="0" placeholder="Year awarded"
+    <input type="number" name="awardDate" id="awardDate" max="2050" min="1970" placeholder="Year"
         hx-post="date/" 
         hx-trigger="input changed delay:200ms" 
         hx-target="#certDate">
-    <input type="text" name="signature" id="signature" placeholder="Awarded by"
+    <input type="text" name="signature" id="signature" placeholder="Signed"
         hx-post="sign/" 
         hx-trigger="keyup changed delay:200ms" 
         hx-target="#certSignature">
 </div>
 
+
 <div id="certificate">
-    <h1 id="certName"></h1>
-    <h2 id="certQual"></h2>
-    <h3 id="certDate"></h3>
-    <h4 id="certSignature"></h4>
+    <div id="certName"></div>
+    <div id="certQual"></div>
+    <div id="certDate"></div>
+    <div id="certSignature"></div>
 </div>
 {% endblock content %}

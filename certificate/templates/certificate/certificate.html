@@ -4,11 +4,35 @@
 
 {% block styles %}
 <style>
+    #inputs {
+        float: left;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 15px;
+    }
+    #inputs > input {
+        display: block;
+        margin: 20px 5px;
+    }
+
+    #certificate {
+        width: 600px;
+        height: 400px;
+        float: right;
+        margin: 10px;
+        border: 3px solid black;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
+<div id="inputs">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <input type="text" name="qual" id="qual" placeholder="Qualification">
+    <input type="date" name="awardDate" id="awardDate">
+    <input type="text" name="signature" id="signature" placeholder="Awarded by">
+</div>
 
-Hello certificate
-
+<div id="certificate">
+</div>
 {% endblock content %}

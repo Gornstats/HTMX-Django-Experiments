@@ -19,7 +19,7 @@
     #certificate {
         width: 600px;
         height: 400px;
-        float: right;
+        float: left;
         margin: 10px;
         padding: 24px 36px;
         border: 20px ridge #74aac1;
@@ -72,6 +72,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div id="inputs">
     <strong>Enter certificate details:</strong>
     <input type="text" name="name" id="name" placeholder="Name"
@@ -92,7 +93,6 @@
         hx-target="#certSignature">
 </div>
 
-
 <div id="certificate">
     <span id="certTitle">Certificate of Achievement</span>
     <div id="certName"></div>
@@ -104,4 +104,5 @@
     <span>Authorised by</span>
     <div id="certSignature"></div>
 </div>
+
 {% endblock content %}

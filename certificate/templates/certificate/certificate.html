@@ -73,6 +73,7 @@
 
 {% block content %}
 <div id="inputs">
+    <strong>Enter certificate details:</strong>
     <input type="text" name="name" id="name" placeholder="Name"
         hx-post="name/" 
         hx-trigger="keyup changed delay:200ms" 
@@ -99,6 +100,7 @@
     <div id="certQual"></div>
     <span>in the year</span>
     <div id="certDate"></div>
+    <hr/>
     <span>Authorised by</span>
     <div id="certSignature"></div>
 </div>

@@ -21,18 +21,53 @@
         height: 400px;
         float: right;
         margin: 10px;
-        padding: 20px 30px;
-        border: 20px solid red;
+        padding: 24px 36px;
+        border: 20px ridge #74aac1;
+        background: rgb(255,242,198);
+        background: linear-gradient(90deg, rgba(255,242,198,1) 0%, rgba(255,253,248,1) 50%, rgba(255,242,198,1) 100%);
     }
 
-    #certificate > div {
+    #certificate > div, span {
         display: block;
+        text-align: center;
+    }
+
+    #certificate > span {
+        font-size: 16px;
+        font-family: Tahoma, sans-serif;
+        color: #545454;
+    }
+
+    #certTitle {
+        font-family: "Courier New", monospace !important;
+        font-size: 24px !important;
+        font-weight: bold;
+    }
+
+    #certName {
+        font-family: Didot, serif;
+        font-size: 32px;
+        margin: 28px 0 20px 0;
+    }
+
+    #certQual {
+        font-family: Didot, serif;
+        font-size: 28px;
+        margin: 20px 0;
+    }
+
+    #certDate {
+        font-family: Didot, serif;
+        font-size: 28px;
+        margin: 20px 0 40px 0;
     }
 
     #certSignature {
-        font-family: Brush Script MT, cursive;
+        font-family: "Brush Script MT", cursive;
         font-size: 28px;
+        margin-top: 10px;
     }
+
 </style>
 {% endblock %}
 
@@ -40,7 +75,7 @@
 <div id="inputs">
     <input type="text" name="name" id="name" placeholder="Name"
         hx-post="name/" 
-        hx-trigger="keyup changed delay:600ms" 
+        hx-trigger="keyup changed delay:200ms" 
         hx-target="#certName">
     <input type="text" name="qual" id="qual" placeholder="Qualification"
         hx-post="qual/" 
@@ -58,9 +93,13 @@
 
 
 <div id="certificate">
+    <span id="certTitle">Certificate of Achievement</span>
     <div id="certName"></div>
+    <span>has satisfied the requirements to be awarded the</span>
     <div id="certQual"></div>
+    <span>in the year</span>
     <div id="certDate"></div>
+    <span>Authorised by</span>
     <div id="certSignature"></div>
 </div>
 {% endblock content %}

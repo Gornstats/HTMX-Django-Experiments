@@ -14,8 +14,13 @@ def edit_qual(request):
     return HttpResponse(qual)
 
 def edit_date(request):
-    date = escape(request.POST.get('awardDate','')) 
-    return HttpResponse(date)
+    date = escape(request.POST.get('awardDate',''))
+    
+    # simple example of a server side check to see if the date is valid 
+    if 1970 <= int(date) <= 2050:
+        return HttpResponse(date)
+    else:
+        return HttpResponse()
 
 def edit_sign(request):
     sign = escape(request.POST.get('signature','')) 

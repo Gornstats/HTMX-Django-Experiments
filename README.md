@@ -15,6 +15,7 @@
     - live update entered text, with server side validation, to build a styled certificate
     - TODO: button to generate certificate HTML snippet as PDF (weasyprint? xhtml2pdf?)
      - Can't seem to get HTMX to send the non-form elements in the post request. Either need to send the inputs and format server side, or use javascript to send the html as a string for PDF rendering
+ - My pets (demo'ing OOB Swaps, triggering multiple elements with one HTMX action)
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?

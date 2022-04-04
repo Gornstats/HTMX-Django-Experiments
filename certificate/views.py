@@ -32,5 +32,6 @@ def generate_pdf(request):
     date = escape(request.POST.get('awardDate',''))
     sign = escape(request.POST.get('signature',''))
     
+    # TODO - generate pdf code here
     return HttpResponse("abcd")
     

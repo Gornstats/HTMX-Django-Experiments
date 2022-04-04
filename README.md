@@ -21,3 +21,6 @@ OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?
  - need to improve landing page to direct users to the various apps/demos
  - example of OOB-Swaps: Pet list page. Enter pet name, gets added to list (target), but also updates other elements (count of pets, temporary pop-up notifying new pet added)
+
+
+ TODO: remove weasyprint & dependencies, then try xhtml2pdf

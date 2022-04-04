@@ -73,7 +73,7 @@
 
 {% block content %}
 
-<div id="inputs">
+<form id="inputs">
     <strong>Enter certificate details:</strong>
     <input type="text" name="name" id="name" placeholder="Name"
         hx-post="name/" 
@@ -91,7 +91,7 @@
         hx-post="sign/" 
         hx-trigger="keyup changed delay:200ms" 
         hx-target="#certSignature">
-</div>
+</form>
 
 <div id="certificate">
     <span id="certTitle">Certificate of Achievement</span>
@@ -104,5 +104,7 @@
     <span>Authorised by</span>
     <div id="certSignature"></div>
 </div>
+
+<button hx-get="download/" hx-include="#inputs" hx-target="this">Click to pdf</button>
 
 {% endblock content %}

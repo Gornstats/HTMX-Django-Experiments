@@ -25,3 +25,12 @@ def edit_date(request):
 def edit_sign(request):
     sign = escape(request.POST.get('signature','')) 
     return HttpResponse(sign)
+
+def generate_pdf(request):
+    name = escape(request.POST.get('name','')) 
+    qual = escape(request.POST.get('qual',''))
+    date = escape(request.POST.get('awardDate',''))
+    sign = escape(request.POST.get('signature',''))
+    
+    return HttpResponse("abcd")
+    

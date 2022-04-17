@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crud',
     'keyboard',
     'certificate',
+    'pets',
 ]
 
 MIDDLEWARE = [

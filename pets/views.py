@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from pets.models import Pet
 
 # Create your views here.
 def pet_list(request):
-    return render(request, 'pets/pet_list.html')
+    pets = Pet.objects.all()
+    
+    return render(request, 'pets/pet_list.html', {'pets': pets,})

@@ -4,4 +4,8 @@
 
 {% block content %}
 <p>Hello pets</p>
+<hr/>
+{% for pet in pets %}
+<p>{{ pet.pet_name }}</p>
+{% endfor %}
 {% endblock content %}

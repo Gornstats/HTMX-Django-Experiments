@@ -17,7 +17,8 @@ def add_pet(request):
         pet = Pet.objects.create(
             pet_name = new_name
         )
-        context = {'pet': pet,}
+        pet_count = Pet.objects.count()
+        context = {'pet': pet, 'pet_count': pet_count,}
     
         return render(request, 'pets/partials/pet_li.html', context)
     

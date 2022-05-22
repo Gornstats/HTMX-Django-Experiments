@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from django.http.response import HttpResponse
-from pets.models import Pet
+from django_htmx.http import trigger_client_event
 
+from pets.models import Pet
 
 def pet_list(request):
     pets = Pet.objects.all()
@@ -20,6 +21,11 @@ def add_pet(request):
         pet_count = Pet.objects.count()
         context = {'pet': pet, 'pet_count': pet_count,}
     
-        return render(request, 'pets/partials/pet_li.html', context)
+        response = render(request, 'pets/partials/pet_li.html', context)
+        trigger_client_event(response, 'pet_added', {})
+        return response
     
     return HttpResponse(status=204)
+
+def pet_alert(request):
+    return render(request, 'pets/partials/pet_added.html', {})

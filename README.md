@@ -15,13 +15,16 @@
     - live update entered text, with server side validation, to build a styled certificate
     - TODO: button to generate certificate HTML snippet as PDF (weasyprint? xhtml2pdf?)
      - Can't seem to get HTMX to send the non-form elements in the post request. Either need to send the inputs and format server side, or use javascript to send the html as a string for PDF rendering
- - My pets (demo'ing OOB Swaps, triggering multiple elements with one HTMX action)
- TODO: Ability to add (and remove?) new pets using htmx-post, display all as a list, update a total pet count after each change (OOB swap), and display a temporary flash notification/banner (OOB swap) 
+ - My pets (demo'ing OOB Swaps & event triggering - two HTMX approaches to updating non-target elements from one HTMX action)
+ TODO: display a temporary flash notification/banner (event trigger) 
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?
  - need to improve landing page to direct users to the various apps/demos
  - example of OOB-Swaps: Pet list page. Enter pet name, gets added to list (target), but also updates other elements (count of pets, temporary pop-up notifying new pet added)
 
+Notes on OOB Swaps/Event Triggering:
+- OOB Swap sends the content in the original response, and then replaces the relevant part of the DOM with the returned content
+- Event triggering returns a header in the original response, that then triggers another DOM element to send a new request (which will return a response with content that can replace the target element)
 
  TODO: remove weasyprint & dependencies, then try xhtml2pdf

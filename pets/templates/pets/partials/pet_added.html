@@ -1,0 +1,7 @@
+<div id="new-pet-alert" class="text-center mt-6"
+hx-get="{% url 'pet_alert' %}" 
+hx-trigger="pet_added from:body" 
+hx-swap="outerHTML"
+>
+new pet added!
+</div>

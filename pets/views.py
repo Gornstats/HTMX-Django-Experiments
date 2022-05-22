@@ -1,9 +1,24 @@
 from django.shortcuts import render
+from django.views.decorators.http import require_http_methods
+from django.http.response import HttpResponse
 from pets.models import Pet
 
-# Create your views here.
+
 def pet_list(request):
     pets = Pet.objects.all()
     context = {'pets': pets,}
     
     return render(request, 'pets/pet_list.html', context)
+
+@require_http_methods(['POST'])
+def add_pet(request):
+    new_name = request.POST.get('petName','petNameError')
+    if len(new_name) > 0:
+        pet = Pet.objects.create(
+            pet_name = new_name
+        )
+        context = {'pet': pet,}
+    
+        return render(request, 'pets/partials/pet_li.html', context)
+    
+    return HttpResponse(status=204)

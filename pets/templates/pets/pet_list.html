@@ -4,26 +4,51 @@
 
 {% block content %}
 
-<div class="grid grid-cols-2 gap-4 items-center">
+<div class="grid grid-cols-2 gap-4">
     <div class="text-center">
         <h1 class="font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600">I love my pets!</h1>
         <p id="pet-count" class="text-m text-purple-900 mb-6">
             I have {{ pets|length }} pets
         </p>
 
-        <form>
-        <p>ADD NEW PETS HERE...eventually</p>
+        <form autocomplete="off">
+          <input
+            required 
+            type="text"
+            class="
+              form-control place-self-auto 
+              inline-block
+              w-1/4
+              px-3
+              py-2.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+            "
+            id="petName" name="petName" 
+            placeholder="Type new pet's name..."
+          />
         <button id="add-pet-btn" 
                 class="mt-6 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs 
                     leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg 
                     focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 
                     active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" 
+                hx-post={% url 'add_pet' %} 
+                hx-target="#pet-list" 
+                hx-swap="beforeend"
         >
-        ADD PET
+        ADD NEW PET
         </button>
         </form>
     </div>
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center">
         <h2 class="font-medium leading-tight text-2xl mt-0 mb-2 text-blue-600">My pets</h3>
         <ul id="pet-list" class="list-disc">
             {% for pet in pets %}

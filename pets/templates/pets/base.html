@@ -10,7 +10,7 @@
         {% block styles %}{% endblock %}
     </head>
     
-    <body>
+    <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 
         <div class="m-24">
             {% block content %}
@@ -20,9 +20,4 @@
 
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        document.body.addEventListener('htmx:configRequest', (event) => {
-            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
-        });
-    </script>
 </html>

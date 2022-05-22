@@ -29,3 +29,6 @@ def add_pet(request):
 
 def pet_alert(request):
     return render(request, 'pets/partials/pet_added.html', {})
+
+def pet_alert_blank(request):
+    return render(request, 'pets/partials/pet_added_blank.html', {})

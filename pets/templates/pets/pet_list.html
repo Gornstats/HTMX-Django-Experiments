@@ -7,7 +7,7 @@
 <div class="grid grid-cols-2 gap-4">
     <div class="text-center">
         <h1 class="font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600">I love my pets!</h1>
-        <p id="pet-count" class="text-m text-purple-900 mb-6">
+        <p id="pet-count" class="text-xl text-purple-900 mb-6">
             I have {{ pets|length }} pets
         </p>
 
@@ -47,13 +47,9 @@
         ADD NEW PET
         </button>
         </form>
-        <div id="new-pet-alert" class="text-center mt-6"
-            hx-get="{% url 'pet_alert' %}" 
-            hx-trigger="pet_added from:body"
-            hx-swap="outerHTML"
-        >
-            AAA
-        </div>
+
+        {% include "pets/partials/pet_added_blank.html" %}
+
     </div>
     <div class="flex flex-col justify-center">
         <h2 class="font-medium leading-tight text-2xl mt-0 mb-2 text-blue-600">My pets</h3>

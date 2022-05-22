@@ -3,9 +3,23 @@
 {% block title %}Pet List{% endblock title %}
 
 {% block content %}
-<p>Hello pets</p>
-<hr/>
-{% for pet in pets %}
-<p>{{ pet.pet_name }}</p>
-{% endfor %}
+
+<div class="grid grid-cols-2 gap-4 items-center">
+    <div class="text-center">
+        <h1>I love my pets!</h1>
+        <p id="pet-count" class="text-sm text-purple-700 mb-6">
+            I have {{ pets|length }} pets
+        </p>
+        <p>ADD NEW PETS HERE...eventually</p>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+        <h3>My pets</h3>
+        <ul id="pet-list" class="list-disc">
+            {% for pet in pets %}
+                <li>{{ pet.pet_name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 {% endblock content %}

@@ -11,11 +11,15 @@
     </head>
     
     <body>
-        {% block content %}
-        {% endblock content %}    
+
+        <div class="m-24">
+            {% block content %}
+            {% endblock content %}
+        </div> 
     </body>
 
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         document.body.addEventListener('htmx:configRequest', (event) => {
             event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';

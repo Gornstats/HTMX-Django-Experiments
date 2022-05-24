@@ -23,5 +23,6 @@ urlpatterns = [
     path('keyboard/', include('keyboard.urls')),
     path('certificate/', include('certificate.urls')),
     path('pets/', include('pets.urls')),
+    path('dropdowns/', include('dropdowns.urls')),
     path('admin/', admin.site.urls),
 ]

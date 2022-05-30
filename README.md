@@ -16,8 +16,8 @@
     - TODO: button to generate certificate HTML snippet as PDF (weasyprint? xhtml2pdf?)
      - Can't seem to get HTMX to send the non-form elements in the post request. Either need to send the inputs and format server side, or use javascript to send the html as a string for PDF rendering
  - My pets (/pets): Keep a list of all your pets. Demonstrates OOB Swaps & event triggering - two HTMX approaches to updating non-target elements from one HTMX action
-- TODO: Conditional dropdowns (/dropdowns): Demonstrates how to make the values of one select/dropdown element be conditional on another, using HTMX
-   - TODO: finish implementing from: https://htmx.org/examples/value-select/
+- Conditional dropdowns (/dropdowns): Demonstrates how to make the values of one select/dropdown element be conditional on another, using HTMX. Also demonstrates using form value to filter partial file's response (instead of needing a different file for different queries)
+
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?

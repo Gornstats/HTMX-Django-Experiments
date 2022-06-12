@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'certificate',
     'pets',
     'dropdowns',
+    'modals',
 ]
 
 MIDDLEWARE = [

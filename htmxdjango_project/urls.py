@@ -24,5 +24,6 @@ urlpatterns = [
     path('certificate/', include('certificate.urls')),
     path('pets/', include('pets.urls')),
     path('dropdowns/', include('dropdowns.urls')),
+    path('modals/', include('modals.urls')),
     path('admin/', admin.site.urls),
 ]

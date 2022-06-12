@@ -1,0 +1,24 @@
+<!-- templates/modals/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}>Modals{% endblock title %} | HTMX-Django Demo</title>
+
+        {% block styles %}{% endblock %}
+    </head>
+    
+    <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+        <div class="m-12">
+            {% block content %}
+            {% endblock content %}
+        </div> 
+    </body>
+
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+</html>

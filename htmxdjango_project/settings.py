@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     
     #3rd party
     'django_htmx',
+    'widget_tweaks',
     
     #local
     'crud',

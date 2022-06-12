@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
+from modals.models import Feedback
+from modals.forms import FeedbackForm
+
 # Create your views here.
 def index(request):
-    return render(request, 'modals/index.html')
+    form = FeedbackForm()
+    context = {'form': form}
+    
+    return render(request, 'modals/index.html', context)

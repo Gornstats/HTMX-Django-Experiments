@@ -17,12 +17,12 @@
      - Can't seem to get HTMX to send the non-form elements in the post request. Either need to send the inputs and format server side, or use javascript to send the html as a string for PDF rendering
  - My pets (/pets): Keep a list of all your pets. Demonstrates OOB Swaps & event triggering - two HTMX approaches to updating non-target elements from one HTMX action
 - Conditional dropdowns (/dropdowns): Demonstrates how to make the values of one select/dropdown element be conditional on another, using HTMX. Also demonstrates using form value to filter partial file's response (instead of needing a different file for different queries)
-- Modals (/modals): Triggering modal form using Alpine.js, and submitting form via HTMX. Tailwind styling (Note: need to add to index)
+- Modals (/modals): Triggering modal form using Alpine.js, and submitting form via HTMX. Tailwind styling
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?
  - need to improve landing page to direct users to the various apps/demos
- - example of OOB-Swaps: Pet list page. Enter pet name, gets added to list (target), but also updates other elements (count of pets, temporary pop-up notifying new pet added)
+ - play with pushing URLs to history
 
 Notes on OOB Swaps/Event Triggering:
 - OOB Swap sends the content in the original response, and then replaces the relevant part of the DOM with the returned content

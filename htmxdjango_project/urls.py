@@ -25,5 +25,6 @@ urlpatterns = [
     path('pets/', include('pets.urls')),
     path('dropdowns/', include('dropdowns.urls')),
     path('modals/', include('modals.urls')),
+    path('events/', include('events.urls')),
     path('admin/', admin.site.urls),
 ]

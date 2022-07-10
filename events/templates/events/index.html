@@ -1,0 +1,13 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+Event registration time!
+
+<h1>Event: {{ event.name }}</h1>
+
+<div id="submit-form">
+    {% include 'events/partials/form.html' %}
+</div>
+
+{% endblock %}

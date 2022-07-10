@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pets',
     'dropdowns',
     'modals',
+    'events',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,15 @@
+{% load widget_tweaks %}
+<form autocomplete="off">
+    {% csrf_token %}
+
+    {% render_field form.name id='username' placeholder='Register a user' %}
+
+    <button type="submit">Submit</button>
+
+    {% if form.non_field_errors %}
+        <p style="color: red;">
+            {{ form.non_field_errors}}
+        </p>
+    {% endif %}
+
+</form>

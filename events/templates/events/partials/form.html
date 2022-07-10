@@ -2,6 +2,7 @@
 <form autocomplete="off" 
     hx-post="{% url 'index' %}" 
     hx-target="#user-list" 
+    _="on submit toggle @disabled on <button /> until htmx:afterOnLoad"
     >
     {% csrf_token %}
 

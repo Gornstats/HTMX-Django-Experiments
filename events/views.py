@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 import time
 
 from events.forms import EventUserForm
@@ -32,3 +33,8 @@ def index(request):
         }
     return render(request, 'events/index.html', context)
 
+def check_spaces(request):
+    # only one event in this demo app
+    event = Event.objects.get(name='My first festival')
+    spaces_available = event.users.count() < event.number_of_places
+    return JsonResponse({'available': spaces_available})

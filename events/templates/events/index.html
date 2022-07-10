@@ -6,7 +6,8 @@ Event registration time!
 
 <h1>Event: {{ event.name }}</h1>
 
-<div id="submit-form">
+<div id="submit-form" 
+    _="on load fetch {% url 'check_spaces' %} as json then if result.available is false add @disabled to <button />">
     {% include 'events/partials/form.html' %}
 </div>
 

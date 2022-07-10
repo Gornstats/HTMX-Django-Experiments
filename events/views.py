@@ -10,7 +10,7 @@ def index(request):
     
     if request.method == 'POST':
         time.sleep(1) # delay to see button disable while awaiting response
-        form = EventUserForm(request.POST)
+        form = EventUserForm(request.POST, event=event)
         if form.is_valid():
             username = form.cleaned_data['name']
             EventUser.objects.create(name=username, event=event)
@@ -18,6 +18,12 @@ def index(request):
                 'users': event.users.all(),
             }
             return render(request, 'events/partials/userlist.html', context)
+        # if form has errors (over-subscribed event) return the form with errors displayed
+        context = {'form': form}
+        response = render(request, 'events/partials/form.html', context)
+        # change HTMX target server-side from the userlist to the form itself
+        response['HX-Retarget'] = '#submit-form'
+        return response
     
     context = {
             'event': event, 

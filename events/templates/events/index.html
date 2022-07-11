@@ -7,7 +7,8 @@
 <h2>Event: {{ event.name }}</h2>
 <h3 id="event-status" style="color: red;"></h3>
 <div id="submit-form" 
-    _="on load fetch {% url 'check_spaces' %} as json then if result.available is false add @disabled to <button /> then put 'Sorry, event full' into #event-status">
+    _="on load or htmx:afterRequest fetch {% url 'check_spaces' %} as json then if result.available is false 
+    add @disabled to <button /> then put 'Sorry, event full' into #event-status">
     {% include 'events/partials/form.html' %}
 </div>
 

@@ -11,9 +11,9 @@
     <button type="submit">Submit</button>
 
     {% if form.non_field_errors %}
-        <p style="color: red;">
+    <div style="color: red;">
             {{ form.non_field_errors}}
-        </p>
+    </div>
     {% endif %}
 
 </form>

@@ -1,3 +1,8 @@
+{% if users %}
+<strong>Event attendees</strong>
+{% else %}
+<p>No attendees yet</p>
+{% endif %}
 <ul>
     {% for user in users %}
         <li>{{ user.name }}</li>

@@ -26,6 +26,7 @@ def index(request):
         response['HX-Retarget'] = '#submit-form'
         return response
     
+    # if GET, load empty form
     context = {
             'event': event, 
             'form': EventUserForm(),

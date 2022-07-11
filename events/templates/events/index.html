@@ -2,12 +2,12 @@
 
 {% block content %}
 
-Event registration time!
+<h1>Register for an event</h1>
 
-<h1>Event: {{ event.name }}</h1>
-
+<h2>Event: {{ event.name }}</h2>
+<h3 id="event-status" style="color: red;"></h3>
 <div id="submit-form" 
-    _="on load fetch {% url 'check_spaces' %} as json then if result.available is false add @disabled to <button />">
+    _="on load fetch {% url 'check_spaces' %} as json then if result.available is false add @disabled to <button /> then put 'Sorry, event full' into #event-status">
     {% include 'events/partials/form.html' %}
 </div>
 

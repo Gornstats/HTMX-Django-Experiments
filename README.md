@@ -23,6 +23,7 @@
    - Adjust HTMX headers server side to change target for responses
    - Custom Django form errors based on model logic  
    - Hyperscript fetch requests for adjusting client side after each HTMX server response
+   - Using server to validate data and adjusting client-side behaviour
 
 OTHER IDEAS:
  - the live markdown editor & viewer from django-htmx site?

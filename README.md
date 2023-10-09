@@ -35,3 +35,4 @@ Notes on OOB Swaps/Event Triggering:
 - Event triggering returns a header in the original response, that then triggers another DOM element to send a new request (which will return a response with content that can replace the target element)
 
  TODO: remove weasyprint & dependencies, then try xhtml2pdf
+ On hold as ideas are split into other repos
